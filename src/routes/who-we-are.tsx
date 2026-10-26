@@ -1,8 +1,8 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 
-import crewPhoto from "@/assets/crew-handsworth-drone.jpg.asset.json";
-import natBailey from "@/assets/nat-bailey-field.png.asset.json";
+import crewPhoto from "@/assets/crew-handsworth-drone.jpg";
+import natBailey from "@/assets/nat-bailey-field.png";
 import { ProjectSlideshow } from "@/components/ProjectSlideshow";
 import { Reveal } from "@/components/Reveal";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
@@ -67,7 +67,7 @@ function WhoWeAre() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-20">
           <img
-            src={natBailey.url}
+            src={natBailey}
             alt="Aerial view of a completed natural grass ballpark field in Vancouver"
             width={1280}
             height={720}
@@ -167,7 +167,7 @@ function WhoWeAre() {
         </div>
         <figure className="mx-auto max-w-7xl px-6 pb-16 sm:px-10">
           <img decoding="async"
-            src={crewPhoto.url}
+            src={crewPhoto}
             alt="Wilco Civil crew celebrating on a completed field at Handsworth"
             className="aspect-[16/9] w-full rounded-sm object-cover object-[center_65%]"
             loading="lazy"

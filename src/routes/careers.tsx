@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Volume2, VolumeX } from "lucide-react";
 import { useRef, useState } from "react";
 
-import careersHero from "@/assets/careers-hero.jpg.asset.json";
-import careersReel from "@/assets/careers-reel-audio.mp4.asset.json";
+import careersHero from "@/assets/careers-hero.jpg";
+import careersReel from "@/assets/careers-reel-audio.mp4";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
 
@@ -60,7 +60,7 @@ function Careers() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-20">
           <img
-            src={careersHero.url}
+            src={careersHero}
             alt="Two Wilco Civil crew members in high-visibility gear talking on the field at BC Place"
             width={1920}
             height={1280}
@@ -86,7 +86,7 @@ function Careers() {
           <div className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-sm bg-primary-deep">
             <video
               ref={videoRef}
-              src={careersReel.url}
+              src={careersReel}
               autoPlay
               muted={muted}
               loop

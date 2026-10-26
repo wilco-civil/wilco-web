@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 
-import wilcoLogo from "@/assets/wilco-logo.asset.json";
+import wilcoLogo from "@/assets/wilco-logo.png";
 import { NAV_LINKS } from "@/components/SiteNav";
 
 export function InfoBand() {
@@ -12,7 +12,7 @@ export function InfoBand() {
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 px-6 py-14 sm:px-10 lg:grid-cols-[1.3fr_0.8fr_1fr_1.1fr]">
         <div>
-          <img src={wilcoLogo.url} alt="Wilco Civil Inc." className="h-20 w-auto" />
+          <img src={wilcoLogo} alt="Wilco Civil Inc." className="h-20 w-auto" />
           <p className="text-display mt-6 text-xl font-bold leading-snug text-foreground">
             Leaders in <span className="text-accent">sports field</span> &amp; civil
             construction.

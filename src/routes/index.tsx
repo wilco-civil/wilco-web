@@ -1,36 +1,36 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ChevronDown, Volume2, VolumeX } from "lucide-react";
 
-import heroReel from "@/assets/bcplace-reel-1-2.mp4.asset.json";
-import heroReelMusic from "@/assets/bcplace-reel-music-highlight.mp4.asset.json";
+import heroReel from "@/assets/bcplace-reel-1-2.mp4";
+import heroReelMusic from "@/assets/bcplace-reel-music-highlight.mp4";
 import { useRef, useState } from "react";
-import heroField from "@/assets/hero-field.png.asset.json";
-import wc2 from "@/assets/worldcup-2.jpg.asset.json";
-import logoPavco from "@/assets/logo-pavco-updated.png.asset.json";
-import logoSurrey from "@/assets/logo-surrey-updated.png.asset.json";
-import logoVancouver from "@/assets/logo-vancouver-updated.png.asset.json";
-import logoRichmond from "@/assets/logo-richmond.png.asset.json";
-import logoCoquitlam from "@/assets/logo-coquitlam.png.asset.json";
-import logoDelta from "@/assets/logo-delta.png.asset.json";
-import logoLangley from "@/assets/logo-langley.png.asset.json";
-import logoNorthVan from "@/assets/logo-north-vancouver.png.asset.json";
-import logoWestVan from "@/assets/logo-west-vancouver.png.asset.json";
-import logoWhistler from "@/assets/logo-whistler.png.asset.json";
-import logoPort from "@/assets/logo-port-vancouver.png.asset.json";
-import logoAbbotsford from "@/assets/logo-abbotsford.png.asset.json";
-import logoNanaimo from "@/assets/logo-nanaimo.png.asset.json";
-import logoMapleRidge from "@/assets/logo-maple-ridge.png.asset.json";
-import logoPcl from "@/assets/logo-pcl.png.asset.json";
-import logoKelowna from "@/assets/logo-kelowna.png.asset.json";
-import logoBurnaby from "@/assets/logo-burnaby.png.asset.json";
-import logoTranslink from "@/assets/logo-translink.png.asset.json";
-import logoHeatherbrae from "@/assets/logo-heatherbrae.png.asset.json";
-import logoNewWestSchools from "@/assets/logo-new-west-schools.png.asset.json";
-import logoSbw from "@/assets/logo-sbw.png.asset.json";
-import logoDiamondBaseball from "@/assets/logo-diamond-baseball.png.asset.json";
-import logoYvr from "@/assets/logo-yvr.png.asset.json";
-import logoPortCoquitlam from "@/assets/logo-port-coquitlam.png.asset.json";
-import logoVancouverCollege from "@/assets/logo-vancouver-college.png.asset.json";
+import heroField from "@/assets/hero-field.png";
+import wc2 from "@/assets/worldcup-2.jpg";
+import logoPavco from "@/assets/logo-pavco-updated.png";
+import logoSurrey from "@/assets/logo-surrey-updated.png";
+import logoVancouver from "@/assets/logo-vancouver-updated.png";
+import logoRichmond from "@/assets/logo-richmond.png";
+import logoCoquitlam from "@/assets/logo-coquitlam.png";
+import logoDelta from "@/assets/logo-delta.png";
+import logoLangley from "@/assets/logo-langley.png";
+import logoNorthVan from "@/assets/logo-north-vancouver.png";
+import logoWestVan from "@/assets/logo-west-vancouver.png";
+import logoWhistler from "@/assets/logo-whistler.png";
+import logoPort from "@/assets/logo-port-vancouver.png";
+import logoAbbotsford from "@/assets/logo-abbotsford.png";
+import logoNanaimo from "@/assets/logo-nanaimo.png";
+import logoMapleRidge from "@/assets/logo-maple-ridge.png";
+import logoPcl from "@/assets/logo-pcl.png";
+import logoKelowna from "@/assets/logo-kelowna.png";
+import logoBurnaby from "@/assets/logo-burnaby.png";
+import logoTranslink from "@/assets/logo-translink.png";
+import logoHeatherbrae from "@/assets/logo-heatherbrae.png";
+import logoNewWestSchools from "@/assets/logo-new-west-schools.png";
+import logoSbw from "@/assets/logo-sbw.png";
+import logoDiamondBaseball from "@/assets/logo-diamond-baseball.png";
+import logoYvr from "@/assets/logo-yvr.png";
+import logoPortCoquitlam from "@/assets/logo-port-coquitlam.png";
+import logoVancouverCollege from "@/assets/logo-vancouver-college.png";
 
 import { Reveal } from "@/components/Reveal";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
@@ -123,7 +123,7 @@ function Index() {
         {/* Background media */}
         <div className="absolute inset-0 -z-20 overflow-hidden bg-primary-deep">
           <video
-            src={heroReel.url}
+            src={heroReel}
             autoPlay
             muted
             loop
@@ -133,8 +133,8 @@ function Index() {
           />
           <video
             ref={videoRef}
-            src={heroReelMusic.url}
-            poster={heroField.url}
+            src={heroReelMusic}
+            poster={heroField}
             autoPlay
             muted
             loop
@@ -221,7 +221,7 @@ function Index() {
         >
           <div className="absolute inset-0 -z-20 overflow-hidden">
             <img loading="lazy" decoding="async"
-              src={wc2.url}
+              src={wc2}
               alt="Field of play construction inside BC Place"
               className="size-full object-cover saturate-[1.35] brightness-105 transition-transform duration-[1200ms] ease-out group-hover:scale-105"
             />
@@ -301,7 +301,7 @@ function Index() {
             {PARTNERS.map((p) => (
               <li key={p.name} className="flex min-h-12 w-[28%] items-center justify-center sm:w-[17%] lg:w-[12%]">
                 <img
-                  src={p.logo.url}
+                  src={p.logo}
                   alt={p.name}
                   loading="lazy"
                   className="h-10 w-auto max-w-full object-contain mix-blend-multiply sm:h-11 sm:max-w-[140px]"

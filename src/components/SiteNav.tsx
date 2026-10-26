@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-import wilcoLogo from "@/assets/wilco-logo.asset.json";
+import wilcoLogo from "@/assets/wilco-logo.png";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -20,7 +20,7 @@ export function SiteNav({ active }: { active: string }) {
       <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 px-6 py-3 sm:px-10 sm:py-4">
         <Link to="/" className="flex items-center">
           <img
-            src={wilcoLogo.url}
+            src={wilcoLogo}
             alt="Wilco Civil Inc."
             className="h-12 w-auto sm:h-16"
           />

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import servicesHero from "@/assets/services-hero.jpg.asset.json";
+import servicesHero from "@/assets/services-hero.jpg";
 import { ContactForm } from "@/components/ContactForm";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
@@ -72,7 +72,7 @@ function Contact() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-20">
           <img
-            src={servicesHero.url}
+            src={servicesHero}
             alt="Aerial view of a completed Wilco Civil park and sports field project"
             width={1920}
             height={1080}

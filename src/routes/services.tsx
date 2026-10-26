@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import servicesHero from "@/assets/services-hero.jpg.asset.json";
+import servicesHero from "@/assets/services-hero.jpg";
 import { Reveal } from "@/components/Reveal";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
@@ -62,7 +62,7 @@ function Services() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-20">
           <img
-            src={servicesHero.url}
+            src={servicesHero}
             alt="Completed waterfront park in Squamish with the Stawamus Chief behind it"
             width={1920}
             height={1080}
