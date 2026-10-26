@@ -5,6 +5,7 @@ import { PhotoGallery } from "@/components/PhotoLightbox";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
 import { PROJECTS } from "@/data/projects";
+import { absoluteUrl, canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -22,6 +23,8 @@ export const Route = createFileRoute("/projects/$slug")({
       };
     }
     const title = `${loaderData.title} | Wilco Civil Inc.`;
+    const path = `/projects/${loaderData.slug}`;
+    const cover = loaderData.photos[0];
     return {
       meta: [
         { title },
@@ -30,7 +33,16 @@ export const Route = createFileRoute("/projects/$slug")({
         { property: "og:description", content: loaderData.summary },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
+        { property: "og:url", content: absoluteUrl(path) },
+        ...(cover
+          ? [
+              { property: "og:image", content: absoluteUrl(cover.url) },
+              { property: "og:image:alt", content: cover.alt },
+              { name: "twitter:image", content: absoluteUrl(cover.url) },
+            ]
+          : []),
       ],
+      links: [canonicalLink(path)],
     };
   },
   notFoundComponent: ProjectNotFound,

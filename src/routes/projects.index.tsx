@@ -8,6 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
 import { PROJECTS } from "@/data/projects";
+import { absoluteUrl, canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
@@ -26,7 +27,9 @@ export const Route = createFileRoute("/projects/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: absoluteUrl("/projects") },
     ],
+    links: [canonicalLink("/projects")],
   }),
   component: Projects,
 });

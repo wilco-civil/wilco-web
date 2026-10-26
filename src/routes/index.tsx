@@ -8,6 +8,7 @@ import heroField from "@/assets/hero-field.png";
 import wc2 from "@/assets/worldcup-2.jpg";
 import logoPavco from "@/assets/logo-pavco-updated.png";
 import logoSurrey from "@/assets/logo-surrey-updated.png";
+import wilcoLogo from "@/assets/wilco-logo.png";
 import logoVancouver from "@/assets/logo-vancouver-updated.png";
 import logoRichmond from "@/assets/logo-richmond.png";
 import logoCoquitlam from "@/assets/logo-coquitlam.png";
@@ -36,6 +37,7 @@ import { Reveal } from "@/components/Reveal";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
 import { SocialFeed } from "@/components/SocialFeed";
+import { DEFAULT_OG_IMAGE, SITE_NAME, absoluteUrl, canonicalLink } from "@/lib/seo";
 
 
 export const Route = createFileRoute("/")({
@@ -58,10 +60,42 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: absoluteUrl("/") },
+    ],
+    links: [canonicalLink("/")],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORGANIZATION_SCHEMA),
+      },
     ],
   }),
   component: Index,
 });
+
+// Structured data for Google's business / knowledge panel results.
+const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  name: SITE_NAME,
+  url: absoluteUrl("/"),
+  logo: absoluteUrl(wilcoLogo),
+  image: absoluteUrl(DEFAULT_OG_IMAGE),
+  description:
+    "Sports fields, civil infrastructure, parks, roads, earthworks and landscape construction across British Columbia.",
+  telephone: "+1-604-882-4752",
+  email: "info@wilcocivil.ca",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "7286 Telegraph Trail",
+    addressLocality: "Langley",
+    addressRegion: "BC",
+    postalCode: "V1M 2M6",
+    addressCountry: "CA",
+  },
+  areaServed: { "@type": "AdministrativeArea", name: "British Columbia" },
+  sameAs: ["https://www.instagram.com/wilcocivil/"],
+};
 
 const DISCIPLINES = [
   "Sports Fields",

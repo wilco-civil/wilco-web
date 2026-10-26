@@ -6,6 +6,7 @@ import careersHero from "@/assets/careers-hero.jpg";
 import careersReel from "@/assets/careers-reel-audio.mp4";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
+import { absoluteUrl, canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -24,7 +25,9 @@ export const Route = createFileRoute("/careers")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: absoluteUrl("/careers") },
     ],
+    links: [canonicalLink("/careers")],
   }),
   component: Careers,
 });

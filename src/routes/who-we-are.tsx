@@ -7,6 +7,7 @@ import { ProjectSlideshow } from "@/components/ProjectSlideshow";
 import { Reveal } from "@/components/Reveal";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
+import { absoluteUrl, canonicalLink } from "@/lib/seo";
 
 
 export const Route = createFileRoute("/who-we-are")({
@@ -26,7 +27,9 @@ export const Route = createFileRoute("/who-we-are")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: absoluteUrl("/who-we-are") },
     ],
+    links: [canonicalLink("/who-we-are")],
   }),
   component: WhoWeAre,
 });

@@ -5,6 +5,7 @@ import servicesHero from "@/assets/services-hero.jpg";
 import { ContactForm } from "@/components/ContactForm";
 import { InfoBand, SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
+import { absoluteUrl, canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,7 +24,9 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: absoluteUrl("/contact") },
     ],
+    links: [canonicalLink("/contact")],
   }),
   component: Contact,
 });
